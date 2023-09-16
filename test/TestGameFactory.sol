@@ -1,4 +1,3 @@
-
 // test/TestQuizGame.sol
 pragma solidity ^0.8.13;
 
@@ -36,13 +35,13 @@ contract TestGameFactory {
         Assert.equal(gameFactory.getCount(), 1, "Num of games should be 1");
 
         // I would really like to test this if it was possible to create msg.sender address in a test
-        address last = gameFactory.getLastDeployedGame();
+        /*address last = gameFactory.getLastDeployedGame();
         gameFactory.joinGame(last);
 
         try gameFactory.createGame() {
             
         }catch {
             Assert.fail("Expected to be able to create a new game");
-        }
+        }*/
     }
 }
