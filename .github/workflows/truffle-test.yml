@@ -1,0 +1,27 @@
+name: Truffle Tests
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch name
+
+jobs:
+  truffle-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # Change this to your desired Node.js version
+
+      - name: Install Dependencies
+        run: npm install -g truffle
+        
+      - name: Compile and Run Truffle Tests
+        run: |
+          truffle compile
+          truffle test
